@@ -83,6 +83,11 @@ GOTO :begin
 
 
 :choco
+WHERE choco
+IF %ERRORLEVEL% NEQ 0 (
+	ECHO Chocolatey (choco) not found.
+	GOTO :wup
+)
 TITLE Chocolatey outdated
 SET choco_outdated="%TEMP%\choco-outdated.lst"
 SET choco_package_pattern="[[:alpha:]][[:alnum:]\.\+_-]+(?=\|)"
@@ -112,6 +117,11 @@ ECHO.
 
 
 :winget
+WHERE winget
+IF %ERRORLEVEL% NEQ 0 (
+	ECHO Windows Package Manager (winget) not found.
+	GOTO :tnuc
+)
 TITLE winget upgrade --source=winget
 FOR /F "tokens=*" %%F IN ('winget --version') DO ( SET winget_version=%%F )
 ECHO|SET /P="%winget_color%Windows Package Manager %winget_version%"
@@ -161,6 +171,11 @@ ECHO.
 
 
 :tnuc
+WHERE TinyNvidiaUpdateChecker
+IF %ERRORLEVEL% NEQ 0 (
+	ECHO TinyNvidiaUpdateChecker not found.
+	GOTO :wup
+)
 TITLE TinyNvidiaUpdateChecker
 ECHO|SET /P="%tnuc_color%"
 TinyNvidiaUpdateChecker --noprompt --confirm-dl
@@ -181,7 +196,6 @@ ECHO%color_reset%
 IF %ERRORLEVEL% NEQ 0 GOTO :END
 ECHO.
 ECHO.
-
 
 :END
 TITLE Cleaning up
