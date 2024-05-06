@@ -85,7 +85,7 @@ GOTO :begin
 :choco
 WHERE choco
 IF %ERRORLEVEL% NEQ 0 (
-	ECHO Chocolatey (choco) not found.
+	ECHO Chocolatey (choco^^^) not found.
 	GOTO :wup
 )
 TITLE Chocolatey outdated
@@ -119,7 +119,7 @@ ECHO.
 :winget
 WHERE winget
 IF %ERRORLEVEL% NEQ 0 (
-	ECHO Windows Package Manager (winget) not found.
+	ECHO Windows Package Manager (winget^^^) not found.
 	GOTO :tnuc
 )
 TITLE winget upgrade --source=winget
