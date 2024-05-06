@@ -86,7 +86,7 @@ GOTO :begin
 WHERE/Q choco
 IF %ERRORLEVEL% NEQ 0 (
 	SETLOCAL DisableDelayedExpansion
-	ECHO Chocolatey (choco) not found.
+	ECHO Chocolatey ^^^(choco^^^) not found.
 	SETLOCAL EnableDelayedExpansion
 	GOTO :wup
 )
