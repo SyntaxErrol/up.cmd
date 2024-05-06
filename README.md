@@ -21,6 +21,8 @@ This is also the execution order so that `winget` won't steal `choco`'s thunder,
   - Looks like I did [`choco install grep`](https://community.chocolatey.org/packages/grep) mine
 - `head`, `tail` and `sort`
   - Mine look like GnuWin CoreUtils but didn't come from [`choco install gnuwin32-coreutils.install`](https://community.chocolatey.org/packages/gnuwin32-coreutils.install) so I probably just downloaded them from [SourceForge](https://sourceforge.net/projects/gnuwin32/files/coreutils/5.3.0/). LOL, this box is old.
+- PSWindowsUpdate Module for Windows Update
+  - `Install-Module PSWindowsUpdate`
 
 Make sure you get this stuff installed and along your `PATH` as we're gonna be working on first name basis.
 
