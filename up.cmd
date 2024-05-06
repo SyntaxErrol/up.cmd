@@ -83,9 +83,11 @@ GOTO :begin
 
 
 :choco
-WHERE choco
+WHERE/Q choco
 IF %ERRORLEVEL% NEQ 0 (
-	ECHO Chocolatey ^^^(choco^^^) not found.
+	SETLOCAL DisableDelayedExpansion
+	ECHO Chocolatey (choco) not found.
+	SETLOCAL EnableDelayedExpansion
 	GOTO :wup
 )
 TITLE Chocolatey outdated
@@ -117,9 +119,11 @@ ECHO.
 
 
 :winget
-WHERE winget
+WHERE/Q winget
 IF %ERRORLEVEL% NEQ 0 (
+	SETLOCAL DisableDelayedExpansion
 	ECHO Windows Package Manager ^^^(winget^^^) not found.
+	SETLOCAL EnableDelayedExpansion
 	GOTO :tnuc
 )
 TITLE winget upgrade --source=winget
@@ -170,7 +174,7 @@ ECHO.
 
 
 :tnuc
-WHERE TinyNvidiaUpdateChecker
+WHERE/Q TinyNvidiaUpdateChecker
 IF %ERRORLEVEL% NEQ 0 (
 	ECHO TinyNvidiaUpdateChecker not found.
 	GOTO :wup
