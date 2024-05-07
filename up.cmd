@@ -14,11 +14,10 @@ SET cleanup-desktop=1
 SET no-color=0
 
 
-:: Ensure we're running in cmd
-REM IF /I "%COMSPEC:~-7%" NEQ "CMD.EXE" (
+:: Ensure we're running in cmd.exe
 IF /I "%1" NEQ "CMDCEPTION" (
 	CMD /C "%0" CMDCEPTION
-	EXIT/B
+	EXIT /B
 )
 
 :: Ensure we're administrator
@@ -28,7 +27,7 @@ IF !ERRORLEVEL! NEQ 0 (
 	ECHO.
 	IF !ERRORLEVEL! EQU 0 (
 		sudo CMD /C "%0"
-		EXIT/B
+		EXIT /B
 	) ELSE (
 		ECHO Missing 'sudo', can't elevate current process.
 	)
@@ -94,7 +93,7 @@ IF %ERRORLEVEL% NEQ 0 (
 )
 TITLE Chocolatey outdated
 SET choco_outdated="%TEMP%\choco-outdated.lst"
-SET choco_package_pattern="[[:alpha:]][[:alnum:]\.\+_-]+(?=\|)"
+SET choco_package_pattern="^[[:alnum:]\.\+_-]+(?=\|)"
 choco outdated %choco_color% > %choco_outdated%
 ECHO|SET /P=%color_green%
 head -n3 %choco_outdated%
