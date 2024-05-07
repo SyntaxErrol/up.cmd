@@ -88,6 +88,7 @@ IF %ERRORLEVEL% NEQ 0 (
 	SETLOCAL DisableDelayedExpansion
 	ECHO Chocolatey ^^^(choco^^^) not found.
 	ECHO.
+	ECHO.
 	SETLOCAL EnableDelayedExpansion
 	GOTO :wup
 )
@@ -124,6 +125,7 @@ WHERE/Q winget
 IF %ERRORLEVEL% NEQ 0 (
 	SETLOCAL DisableDelayedExpansion
 	ECHO Windows Package Manager ^^^(winget^^^) not found.
+	ECHO.
 	ECHO.
 	SETLOCAL EnableDelayedExpansion
 	GOTO :tnuc
@@ -179,6 +181,7 @@ ECHO.
 WHERE/Q TinyNvidiaUpdateChecker
 IF %ERRORLEVEL% NEQ 0 (
 	ECHO TinyNvidiaUpdateChecker not found.
+	ECHO.
 	ECHO.
 	GOTO :wup
 )
