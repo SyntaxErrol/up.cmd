@@ -202,8 +202,6 @@ REM TITLE Installing Windows Updates
 powershell -Command Install-WindowsUpdate
 ECHO%color_reset%
 IF %ERRORLEVEL% NEQ 0 GOTO :END
-ECHO.
-ECHO.
 
 :END
 TITLE Cleaning up
