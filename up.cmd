@@ -165,6 +165,7 @@ IF /I "%UPS%" EQU "" (
 			FOR /F "usebackq tokens=*" %%P IN (%winget_ids%) DO (
 				TITLE Updating %%P
 				winget upgrade --silent %%P
+				ECHO.
 			)
 		)
 	) ELSE (
