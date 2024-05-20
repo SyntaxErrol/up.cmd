@@ -1,4 +1,5 @@
 # up.cmd
+![](up.cmd.png)
 A Windows script for updating a bunch of things with one command. Engineered explicitly for home use and COMES WITH ABSOLUTELY NO WARRANTY! 🎉
 
 ## Currently supports
